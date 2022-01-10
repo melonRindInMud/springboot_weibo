@@ -1,0 +1,317 @@
+@keyframes imgPresence {
+    0% {filter: contrast(60%)}
+    50% {filter: contrast(140%)}
+    100% {filter: contrast(60%);}
+}
+
+/* 共 3秒 */
+@keyframes bodyEntrance{
+    0% {
+        filter: contrast(0%);
+        transform: scale(0.0) rotateY(0deg) rotateX(90deg);
+    }
+    80% {filter: contrast(300%);
+        transform: scale(1.2) rotateY(1080deg) rotateX(720deg);
+    }
+    100% {
+        filter: contrast(100%);
+        transform: scale(1.0) rotateY(1080deg) rotateX(720deg);
+    }
+}
+
+@keyframes formEntrance {
+    0% {
+        background-color: rgba(250, 245, 248, 0.05);
+        box-shadow: 0px 0px 4px 4px rgba(245, 241, 243, 0.05) inset;
+    }
+    60% {
+        background-color: rgba(250, 245, 248, 0.05);
+        box-shadow: 0px 0px 4px 4px rgba(245, 241, 243, 0.05) inset;
+    }
+    80% {
+        background-color: rgba(238, 227, 197, 1.0);
+        box-shadow: 0px 0px 50px 70px rgba(212, 200, 187, 1.0) inset;
+    }
+    100% {
+        background-color: rgba(250, 245, 248, 0.05);
+        box-shadow: 0px 0px 4px 4px rgba(245, 241, 243, 0.05) inset;
+    }
+}
+
+body
+{
+    background-color: rgb(0, 0, 0);
+    -webkit-animation: bodyEntrance 3s linear;
+}
+
+#background
+{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    -webkit-animation: imgPresence 8s linear infinite;
+}
+
+h2
+{
+    font-size: 43px;
+    margin: 15px !important;
+}
+
+p
+{
+    margin: 10px;
+}
+
+p#title
+{
+    font-size: 33px;
+}
+
+p#content
+{
+    font-size: 28px;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#articleInfo
+{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 13px;
+    transition: 0.8s;
+    font-size: 25px;
+    outline: none;
+    resize: none;
+    background-color: rgba(255,255,255, 0);
+}
+
+#articleInfo:focus
+{
+    transition: 0.8s;
+    background-color: rgba(254, 251, 221, 0.8);
+    box-shadow: 0 0 54px 33px rgb(201, 201, 164) inset;
+}
+
+form#composeBody
+{
+    transition: 2.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(250, 245, 248, 0.05);
+    border-radius: 20px;
+    padding: 10px 30px 10px 30px;
+    -webkit-animation: formEntrance 5s linear;
+}
+
+#composeBody:hover
+{
+    transition: 1.6s;
+    background-color: rgba(241, 236, 224, 0.5);
+    box-shadow: 0 0 74px 50px rgba(211, 207, 197, 0.5) inset;
+}
+
+#yearLicense
+{
+    font-size: 18px;
+    position: absolute;
+    left: 55px !important;
+    bottom: 90px !important;
+    opacity: 1.0;
+    color: white;
+}
+
+#yearLicense > a
+{
+    color: rgb(250, 240, 250);
+}
+
+a
+{
+    transition: 0.8s;
+    text-decoration: none;
+}
+
+a:hover
+{
+    transition: 0.8s;
+    text-decoration: underline;
+}
+
+input#submit
+{
+    transition: 0.8s;
+    outline: none;
+    border-radius: 12px;
+    padding: 8px 22px 8px 22px;
+    font-size: 28px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+input#submit:disabled
+{
+    transition: 0.8s;
+    opacity: 0.0 !important;
+}
+
+input#submit:enabled:hover
+{
+    transition: 0.8s;
+    background-color: rgb(254, 251, 221);
+    box-shadow: 0 0 8px 8px rgb(188, 185, 154) inset;
+}
+
+input#submit:enabled:active
+{
+    transition: 0.2s;
+    filter: invert(1.0);
+    transform: scale(0.8);
+}
+
+input#imgSubmit
+{
+    opacity: 0.1;
+    transition: 0.8s;
+    outline: none;
+    font-size: 28px;
+    border-radius: 12px;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.0);
+}
+
+input#imgSubmit:enabled:hover
+{
+    opacity: 1.0;
+    transition: 0.8s;
+    background-color: rgba(254, 251, 221, 0.8);
+}
+
+input#titleInput
+{
+    transition: 0.8s;
+    border: 2px solid black;
+    width: 330px;
+    margin-left: 20px;
+    border-radius: 12px;
+    outline: none;
+    padding: 8px;
+    font-size: 30px;
+    background-color: rgba(255,255,255, 0);
+}
+
+input#titleInput:enabled:focus
+{
+    transition: 0.8s;
+    background-color: rgba(254, 251, 221, 0.8);
+    box-shadow: 0 0 10px 10px rgb(201, 201, 164) inset;
+}
+
+span#contentRemind
+{
+    margin-left: 70px;
+}
+
+p#titleRemind
+{
+    font-size: 28px;
+    margin-bottom: 0px;
+}
+
+p#img
+{
+    font-size: 28px;
+}
+
+span#welcome
+{
+    font-size: 20px;
+}
+
+span#no_login_remind
+{
+    font-size: 20px;
+}
+
+a#a_login
+{
+    font-size: 20px;
+}
+
+/*错误信息文本*/
+p.error
+{
+    transition: 0.8s;          /*设置样式渐变，需要0.8秒完成变化*/
+    color: rgb(240, 100, 100);  /*设置内容颜色，对于p来说 内容就是文本*/
+    opacity: 1.0;
+}
+
+/*警告信息文本*/
+p.warning
+{
+    transition: 0.8s;
+    color: rgb(240, 160, 100);
+    opacity: 1.0;
+}
+
+/*正确信息文本*/
+p.correct
+{
+    transition: 0.8s;
+    color: rgb(40, 100, 240);
+    opacity: 1.0;
+}
+
+/*错误信息文本*/
+span.error
+{
+    transition: 0.8s;          /*设置样式渐变，需要0.8秒完成变化*/
+    color: rgb(240, 100, 100);  /*设置内容颜色，对于p来说 内容就是文本*/
+    opacity: 1.0;
+}
+
+/*警告信息文本*/
+span.warning
+{
+    transition: 0.8s;
+    color: rgb(240, 160, 100);
+    opacity: 1.0;
+}
+
+/*正确信息文本*/
+span.correct
+{
+    transition: 0.8s;
+    color: rgb(40, 100, 240);
+    opacity: 1.0;
+}
+
+p.p_after
+{
+    font-size: 30px;
+}
+
+a.a_after
+{
+    transition: 0.8s;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+a.a_after:hover
+{
+    transition: 0.8s;
+    text-decoration: underline;
+}
+

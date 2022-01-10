@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>文章主页</title>
+        <!--css-->
+        <link rel="stylesheet" href="/static/MainPage/Main.css"/>
+        <!--jquery库-->
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+        <!--防止初始加载外部css样式时transform生效的脚本-->
+        <script src="/static/Common/initTransformPrevention.js"></script>
+        <!--时钟脚本-->
+        <script src="/static/Common/Clock.js"></script>
+        <!--js脚本 jquery中使用了元素选择器的话 必须使用defer 延时加载策略，否则不能正确的找到相关元素-->
+        <script src="/static/MainPage/Main.js" defer></script>
+    </head>
+    <body class="no_transition">
+        <a id="back" href="/navigation">返回导航页</a>
+        <img id="background" src="/static/MainPage/bg.jpg"/>
+        <div id="articlePageHeader">
+            <p id="title">文章中心</p>
+            <p id="pageInfo">第
+                <span id="currentPage" th:text="${info.getPage()}"></span>
+                页, 共
+                <span th:text="${(info.getTotal() - 1) / 5 + 1}"></span>
+                页
+            </p>
+            <p>
+                <button id="buttonDate">按时间排序</button>
+                <button id="buttonComment">按评论数排序</button>
+                <button id="buttonSupport">按点赞数排序</button>
+            </p>
+            <p id="clock">时钟</p>
+        </div>
+        <div id="articleBriefContainer">
+            <div th:each="m:${info.getInfo()}" class="articleDiv">
+                <p th:text="'文章名: ' + ${m.getTitle()}" class="title"></p>
+                <p class="author">作者:
+                    <a th:text="${m.getOwnerName()}" th:href="'/userPublicInfo/' + ${m.getOwnerName()}"></a>
+                </p>
+                <p class="date">发布日期: <span th:text="${m.getDate()}"></span></p>
+                <p class="brief">简介:</p>
+                <p class="briefInfo" th:utext="${m.getBrief()}"></p>
+                <p class="interact">点赞数:
+                    <span th:text="${m.getSupports()}"></span>评论数:<span th:text="${m.getComments()}"></span>
+                </p>
+                <p class="detailLink">详情: <a th:href="@{'/article/'+${m.getArticleId()}}">点击查看全文</a></p>
+            </div>
+        </div>
+        <div id="pageSelectorContainer">
+            <p>选择页数</p>
+            <button onclick="clicked(this)"
+                    th:each="i:${#numbers.sequence(1, (info.getTotal() - 1) / 5 + 1)}" th:text="${i}">
+            </button>
+        </div>
+    </body>
+</html>

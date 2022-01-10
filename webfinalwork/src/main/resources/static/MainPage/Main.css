@@ -1,0 +1,191 @@
+.no_transition {
+     transition: none;
+ }
+
+a#back
+{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+}
+
+div#articlePageHeader
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(240, 220, 180, 0.8);
+    box-shadow: 0 0 15px 15px rgba(200, 190, 150, 0.8) inset,
+                0 0 7px 7px rgba(180, 165, 135, 0.8);
+    border-radius: 20px;
+    padding: 10px 30px 10px 30px;
+}
+
+img#background
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+p#title
+{
+    font-size: 45px;
+    text-shadow: 0 0 16px rgb(60, 55, 40);
+    margin: 10px 20px 10px 20px;
+}
+
+p#pageInfo
+{
+    font-size: 22px;
+    text-shadow: 0 0 6px rgb(120, 105, 80);
+    margin: 5px 10px 5px 10px;
+}
+
+p > button
+{
+    border-radius: 10px;
+    font-size: 22px;
+    text-shadow: 0 0 6px rgb(120, 105, 80);
+    background-color: rgb(255, 243, 225);
+    box-shadow: 0 0 3px 3px rgb(211, 205, 198) inset,
+                0 0 5px 5px rgb(180, 167, 154);
+    width: 180px;
+    padding: 10px;
+}
+
+p#clock
+{
+    margin-left: 25px;
+    white-space: pre;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div#articleBriefContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+div.articleDiv
+{
+    padding: 20px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(200, 180, 140, 0.8);
+    box-shadow: 0 0 25px 25px rgba(180, 165, 130, 0.8) inset,
+                0 0 15px 15px rgba(80, 80, 80, 0.8);
+    border-radius: 12px;
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+p.title
+{
+    font-size: 30px;
+    text-shadow: 0 0 10px rgb(60, 55, 40);
+    margin-bottom: 5px;
+
+}
+
+p.author
+{
+    font-size: 28px;
+    text-shadow: 0 0 8px rgb(60, 55, 40);
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+p.date
+{
+    font-size: 22px;
+    text-shadow: 0 0 6px rgb(60, 55, 40);
+}
+
+p.brief
+{
+    font-size: 24px;
+    text-shadow: 0 0 7px rgb(60, 55, 40);
+    margin-bottom: 5px;
+}
+
+p.briefInfo
+{
+    margin-top: 5px;
+}
+
+p.interact
+{
+    font-size: 22px;
+    text-shadow: 0 0 6px rgb(60, 55, 40);
+}
+
+p.interact > span
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 25px;
+    text-shadow: 0 0 8px rgb(60, 55, 40);
+}
+
+p.detailLink
+{
+    font-size: 22px;
+    text-shadow: 0 0 7px rgb(60, 55, 40);
+}
+
+div#pageSelectorContainer
+{
+    background-color: rgba(240, 220, 180, 0.8);
+    box-shadow: 0 0 15px 15px rgba(200, 190, 150, 0.8) inset,
+                0 0 7px 7px rgba(180, 165, 135, 0.8);
+    border-radius: 18px;
+    padding: 10px 20px 10px 20px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+div#pageSelectorContainer > p
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 35px;
+    text-shadow: 0 0 12px rgb(60, 55, 40);
+
+}
+
+div#pageSelectorContainer > button
+{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 31px;
+    padding: 12px 20px 12px 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 243, 225);
+    box-shadow: 0 0 3px 3px rgb(211, 205, 198) inset,
+                0 0 5px 5px rgb(180, 167, 154);
+}

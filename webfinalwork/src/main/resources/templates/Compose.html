@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8" />
+        <title>创作</title>
+        <!--Css样式-->
+        <link rel="stylesheet" href="../static/Compose/Compose.css"/>
+        <!--jquery库-->
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+        <!--防止初始加载外部css样式时transform生效的脚本-->
+        <script src="../static/Common/initTransformPrevention.js"></script>
+        <!--js脚本 由于要使用到元素选择器，所以必须要defer 等元素加载完再执行脚本，否则无法选择到元素-->
+        <script src="../static/Compose/Compose.js" defer></script>
+    </head>
+    <body>
+        <!--绝对定位元素-->
+        <p id="yearLicense">
+            <a href="/help" target="_blank">帮助中心</a>
+            <span> | </span>
+            <a href="/aboutUs" target="_blank">关于我们</a>
+            <span> | 2020@guapi</span>
+        </p>
+        <img src="../static/Compose/ComposeBackGround.jpg" id="background"/>
+
+        <form id="composeBody" method="post" action="/composeCheck" enctype="multipart/form-data" th:object="${info}">
+            <h2>创作中心</h2>
+            <p>
+                <span id="welcome" th:if="${session.login}">欢迎,用户 </span>
+                <a id="a_login" th:unless="${session.login}" href="/login">点击登录</a>
+                <span id="no_login_remind" th:text="${session.login}?:'请先登录'"></span>
+            </p>
+            <p id="title">标题
+                <input type="text" maxlength="20" id="titleInput" pattern="[,。_a-zA-Z0-9\u4e00-\u9fa5]{1,}"
+                       autocomplete="off" th:disabled="!${session.login}" th:field="*{title}"/>
+            </p>
+            <p id="titleRemind">请填写标题</p>
+            <p id="content">内容<span id="contentRemind">内容不少于100字</span></br>
+                <textarea id="articleInfo" wrap="hard" cols="80" rows="17" th:disabled="!${session.login}"
+                          th:field="*{info}"></textarea>
+            </p>
+            <p id="img">图片
+                <input type="file" id="imgSubmit" accept="image/*" name="img" th:disabled="!${session.login}"/>
+            </p>
+            <input type="submit" id="submit" value="提交" disabled/>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+server:
+  port: 8080                           # 服务器端口号
+  servlet:
+    session:
+      cookie:
+        max-age: 600s                  # 设置session cookie 的过期时间
+
+spring:
+  datasource:
+    url: jdbc:h2:~/test                # url
+    driver-class-name: org.h2.Driver   # H2 数据库驱动类的名称
+    username: sa                       # H2 数据库用户名
+    password: 123456                   # H2 数据库初始默认密码  (这里是一个提交验证的意思，而不是设置请注意)
+
+  jpa:
+    database: h2                       # 数据库类型 h2 数据库
+    hibernate:
+      ddl-auto: update                 # 数据库维护策略：更新（常用），即以a+的方式打开数据库（学过文件打开方式的应该懂）
+    show-sql: true                     # 显示每一次jpa 操作实际对应的sql语句
+
+  h2:
+    console:
+      path: /h2-console                # 控制台路径
+      enabled: true                    # 启用控制台
+
+  thymeleaf:
+    cache: false                       # 不启用缓存
+    servlet:
+      content-type: text/html
+    encoding: utf-8                    # view 模型编码 utf-8
+    mode: HTML5                        # view 模型类型 html5
+    suffix: .html                      # view 模型路径后缀
+    prefix: classpath:/templates/      # view 模型路径前缀
+
+  mvc:
+    static-path-pattern: /static/**    # 静态资源路径模式
+
+  resources:
+    static-locations: classpath:/static/    # 静态资源位置
+
+  servlet:
+    multipart:                              # 上传文件配置
+      max-request-size: 20MB                # 上传文件总大小
+      max-file-size: 10MB                   # 上传单个文件大小
+
+  mail:                                               # 发送邮件配置
+    host: smtp.qq.com                                 # 发送邮件服务器
+    username: 1838831597@qq.com                       # 发送邮件的邮箱地址
+    password:  jaykcrfvqgqhebig                       # 客户端授权码，不是邮箱密码，这个在qq邮箱设置里面自动生成的
+
+    properties:
+      mail:
+        smtp:
+          port: 465                                   # 端口号465 或 587 都可以
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
+
+    default-encoding: UTF-8

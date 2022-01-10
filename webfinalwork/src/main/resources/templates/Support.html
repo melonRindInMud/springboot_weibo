@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>用户点赞信息</title>
+        <link rel="stylesheet" href="/static/Support/Support.css"/>
+    </head>
+    <body>
+        <div th:each="m:${info}">
+            <p class="FormatP">点赞时间: <span th:text="${m.getDate()}"></span></p>
+            <p class="FormatP">被赞文章:
+                <a th:text="'#' + ${m.getArticleId()}" th:href="@{'/article/'+${m.getArticleId()}}"></a>
+            </p>
+        </div>
+    </body>
+</html>

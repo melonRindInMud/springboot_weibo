@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>欢迎</title>
+        <link rel="stylesheet" href="../static/Navigation/Navigation.css"/>
+        <!--jquery库-->
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+        <!--js 脚本 防止transition 在页面加载时生效-->
+        <script src="../static/Common/initTransformPrevention.js"></script>
+        <!--js脚本 jquery中使用了元素选择器的话 必须使用defer 延时加载策略，否则不能正确的找到相关元素-->
+        <script src="../static/Navigation/Navigation.js" defer></script>
+        <!--时钟脚本-->
+        <script src="../static/Common/Clock.js"></script>
+    </head>
+    <body class="no_transition">
+    <nav class="dawn">
+        <p id="userInfo" th:text="${session.login}?:'尚未登录'">用户信息</p>
+        <button th:hidden="${session.login}" class="headerLeftButton" id="login">登录</button>
+        <button th:hidden="!${session.login}" class="headerLeftButton" id="logOut">退出</button>
+        <button class="headerLeftButton" id="register">注册</button>
+        <button class="headerLeftButton" id="help">帮助</button>
+        <span>
+            <input placeholder="请输入要搜索的内容"/>
+        </span>
+        <button th:disabled="!${session.login}" class="headerRightButton" id="myArticle">我的文章</button>
+        <button th:disabled="!${session.login}" class="headerRightButton" id="supports">我的点赞</button>
+        <button th:disabled="!${session.login}" class="headerRightButton" id="comments">我的评论</button>
+        <button th:disabled="!${session.login}" class="headerRightButton" id="referMe">@我</button>
+        <button th:disabled="!${session.login}" class="headerRightButton" id="compose">写文章</button>
+    </nav>
+    <div id="functions">
+        <button id="allArticle">所有文章</button>
+        <button id="loginButton" th:disabled="${session.login}">点击登录</button>
+        <button id="logoutButton" th:disabled="!${session.login}">点击退出</button>
+        <button id="registerButton">点击注册</button>
+        <button id="findPasswordButton">找回密码</button>
+        <button id="helpButton">帮助中心</button>
+    </div>
+    <div id="theme">
+        <p id="title">瓜皮微博</p>
+        <img src="../static/FindPassword/theme.png"/>
+        <p id="clock"></p>
+    </div>
+    <p id="yearLicense">
+        <a href="/help" target="_blank">帮助中心</a>
+        <span> | </span>
+        <a href="/aboutUs" target="_blank">关于我们</a>
+        <span> | 2020@guapi</span>
+    </p>
+    </body>
+</html>

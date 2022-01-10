@@ -1,0 +1,407 @@
+@keyframes backgroundImg {
+    0% {
+        filter: contrast(150%);
+    }
+    20% {
+        filter: contrast(125%);
+    }
+    40% {
+        filter: contrast(100%);
+    }
+    50% {
+        filter: contrast(85%);
+    }
+    60% {
+        filter: contrast(100%);
+    }
+    80% {
+        filter: contrast(125%);
+    }
+    100% {
+        filter:  contrast(150%);
+    }
+}
+
+@keyframes delayEntrance {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes statement1Animation {
+    0% {
+        background-image:linear-gradient(45deg, rgb(255, 0, 255), rgb(255, 0, 0));
+        transform: scale(1.0);
+    }
+    20% {
+        background-image:linear-gradient(45deg, rgb(255, 0, 0), rgb(255, 128, 0));
+        transform: scale(0.9);
+    }
+    40%{
+        background-image:linear-gradient(45deg, rgb(255, 128, 0), rgb(255, 255, 0));
+        transform: scale(0.8);
+    }
+    60%{
+        background-image:linear-gradient(45deg, rgb(255, 255, 0), rgb(255, 0, 255));
+        transform: scale(0.8);
+    }
+    80% {
+        background-image:linear-gradient(45deg, rgb(255, 0, 255), rgb(255, 0, 0));
+        transform: scale(0.9);
+    }
+    100% {
+        background-image:linear-gradient(45deg, rgb(255, 0, 255), rgb(255, 0, 0));
+        transform: scale(1.0);
+    }
+}
+
+@keyframes statement2Animation{
+    0% {
+        transform: scale(1.0);
+    }
+    50%{
+        transform: scale(0.80);
+    }
+    100 %{
+        transform: scale(1.0);
+    }
+}
+
+@keyframes leftEntrance{
+    0% {
+        opacity: 0%;
+    }
+    75% {
+        transform: translateX(400px);
+        opacity: 0%;
+    }
+    100 %{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes rightEntrance {
+    0% {
+        opacity: 0%;
+    }
+    75% {
+        transform: translateX(-400px);
+        opacity: 0%;
+    }
+    100 %{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes entrance {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.no_transition {
+    transition: none;
+}
+
+@keyframes clock {
+    0% {
+        opacity: 1.0;
+        box-shadow: 0 0 14px 14px rgba(200, 200, 176, 0.6),
+                    0 0 6px 6px rgba(140, 140, 110, 0.7) inset;
+    }
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 7px 7px rgba(200, 200, 176, 0.6),
+                    0 0 3px 3px rgba(140, 140, 110, 0.7) inset;
+    }
+    100% {
+        opacity: 1.0;
+        box-shadow: 0 0 14px 14px rgba(200, 200, 176, 0.6),
+                    0 0 6px 6px rgba(140, 140, 110, 0.7) inset;
+    }
+}
+
+/*绝对定位元素*/
+#statement1
+{
+    position: absolute;
+    left: 600px;
+    top: 245px;
+    font: 500 64px 'STHupo';
+    color: transparent;
+    background-image:linear-gradient(45deg, rgb(255, 0, 255), rgb(255, 0, 0));
+    -webkit-background-clip: text;  /*webkit内核 支持字体背景剪裁*/
+    -webkit-animation: statement1Animation 2s linear infinite;
+}
+
+#statement2
+{
+    position:  absolute;
+    left: 600px;
+    top: 345px;
+    font: 400 40px 'STHupo';
+    color: transparent;
+    background-image:linear-gradient(-45deg, rgb(255, 0, 255), rgb(0, 0, 255));
+    -webkit-background-clip: text;  /*webkit内核 支持字体背景剪裁*/
+    -webkit-animation: statement2Animation 3s linear infinite;
+}
+
+#yearLicense
+{
+    font-size: 18px;
+    position: absolute;
+    left: 100px;
+    bottom: 100px;
+    color: white;
+}
+
+#yearLicense > a
+{
+    color: rgb(250, 240, 250);
+}
+
+
+body
+{
+    font-family: "STHeiti";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-animation: entrance 2s linear;
+}
+
+#jumpLog
+{
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    width: 380px;
+    color: rgb(100, 100, 100);
+}
+
+#r1, #r2, #r3, #r4
+{
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*错误信息文本*/
+p.error
+{
+    transition: 0.8s;          /*设置样式渐变，需要0.8秒完成变化*/
+    color: rgb(240, 100, 100)  /*设置内容颜色，对于p来说 内容就是文本*/
+}
+
+/*警告信息文本*/
+p.warning
+{
+    transition: 0.8s;
+    color: rgb(240, 160, 100)
+}
+
+/*正确信息文本*/
+p.correct
+{
+    transition: 0.8s;
+    color: rgb(40, 100, 240)
+}
+
+form > div
+{
+    transition: 0.8s;
+    text-align: center;
+    padding: 3px;
+    font-size: 28px;
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: rgb(101, 123, 255);
+    box-shadow: 0 0 6px 4px rgb(46, 46, 221) inset;
+    color: rgb(255, 255, 255);
+    width: 410px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+form > div.hasFocus
+{
+    transition: 0.8s;
+    background-color: rgb(220, 240, 250);
+    box-shadow: 0px 0px 6px 4px rgb(130, 145, 222) inset;
+    color: rgb(0, 0, 0);
+}
+
+#userName, #passWord, #passWordConfirm, #email
+{
+    transition: 0.8s;
+    outline: none;
+    width: 260px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    float: right;
+    background-color: rgb(222, 200, 222);
+}
+
+#d1, #d3, #r2, #r4
+{
+    -webkit-animation: leftEntrance 2s linear;
+}
+
+#d2, #d4, #r1, #r3
+{
+    -webkit-animation: rightEntrance 2s linear;
+}
+
+input:focus
+{
+    background-color: rgb(255, 250, 255) !important;
+}
+
+input:focus:invalid
+{
+    transition: 0.8s;
+    box-shadow: 0px 0px 3px 3px rgb(240, 100, 100) inset;
+    color: rgb(240, 100, 100);
+}
+
+input:focus:valid
+{
+    transition: 0.8s;
+    box-shadow: 0px 0px 3px 3px rgb(40, 100, 240) inset;
+    color: rgb(40, 100, 240);
+}
+
+
+#submit
+{
+    outline: none;
+    background-color: rgb(60, 60, 255);
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    padding: 6px 200px 6px 200px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+#submit:hover
+{
+    transition: 0.4s;
+    background-color: rgb(120, 120, 255);
+}
+
+#submit:active
+{
+    transition: 0.4s;
+    background-color: rgb(30, 30, 220) !important;
+}
+
+h2
+{
+    width: 380px;
+    font: 600  40px "STKaiti";
+    margin-bottom: 0px;
+}
+
+
+form
+{
+    transition: 0.8s;
+    border-radius: 23px;
+    background-color: rgba(211, 198, 255, 0.4);
+    margin-top: 6%;
+    padding: 20px 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(590px);
+    -webkit-animation: delayEntrance 2s linear;
+}
+
+form:hover
+{
+    transition: 0.8s;
+    background-color: rgba(211, 198, 255, 0.8);
+}
+
+a
+{
+    transition: 0.8s;
+    text-decoration: none;
+}
+
+a:hover
+{
+    transition: 0.8s;
+    text-decoration: underline;
+}
+
+#agreeTreaty
+{
+    border-radius: 1px;
+}
+
+#backgroundImg
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    -webkit-animation: backgroundImg 3s linear infinite;
+}
+
+
+p#feedBack
+{
+    margin: 40px;
+    font-size: 32px;
+}
+
+
+p > span
+{
+    white-space: pre;   /*不忽略空白字符*/
+}
+
+a#jump
+{
+    transition: 0.8s;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+a#jump:hover
+{
+    transition: 0.8s;
+    font-size: 32px;
+    text-decoration: underline;
+}
+
+p#clock
+{
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(241, 241, 210, 0.6);
+    box-shadow: 0 0 20px 20px rgba(200, 200, 176, 0.6),
+                0 0 7px 7px rgba(70, 70, 40, 0.7) inset;
+    -webkit-animation: clock 2s linear infinite;
+    position: absolute;
+    left: 105px;
+    bottom: 400px;
+    font-size: 25px;
+    white-space: pre;  /*不忽略空白字符*/
+}

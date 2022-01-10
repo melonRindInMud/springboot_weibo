@@ -1,0 +1,402 @@
+p
+{
+    white-space: pre;
+}
+
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 98vh;
+}
+
+div#basic
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.basicElem
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+div.expsElem
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+
+div.interactElem
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+
+div#exps
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+div#interact
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button
+{
+    transition: 0.8s;
+    margin-left: 20px;
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+
+button#back
+{
+    opacity: 0.4;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgb(87, 101, 241);
+    box-shadow: 0 0 4px 4px rgb(36, 51, 150) inset,
+                0 0 8px 8px rgb(103, 128, 255);
+    color: white;
+}
+
+button#back:hover
+{
+    opacity: 0.8;
+    transition: 0.8s;
+    background-color: rgb(143, 221, 255);
+    color: black;
+    box-shadow: 0 0 4px 4px rgb(187, 234, 255) inset,
+                0 0 8px 8px rgb(122, 198, 234);
+
+}
+
+
+button#focusButton
+{
+    background-color: rgb(87, 101, 241);
+    box-shadow: 0 0 4px 4px rgb(36, 51, 150) inset;
+    color: white;
+}
+
+button#focusButton:hover
+{
+    transition: 0.8s;
+    background-color: rgb(143, 221, 255);
+    color: black;
+    box-shadow: 0 0 4px 4px rgb(187, 234, 255) inset;
+}
+
+button#unFocusButton
+{
+    background-color: rgb(255, 0, 87);
+    box-shadow: 0 0 4px 4px rgb(212, 0, 45) inset;
+    color: white;
+}
+
+button#unFocusButton:hover
+{
+    transition: 0.8s;
+    background-color: rgb(255, 50, 50);
+    color: black;
+    box-shadow: 0 0 4px 4px rgb(255, 70, 70) inset;
+}
+
+button#loginButton
+{
+    background-color: rgb(12, 201, 34);
+    box-shadow: 0 0 4px 4px rgb(6, 152, 26) inset;
+    color: white;
+}
+
+button#loginButton:hover
+{
+    transition: 0.8s;
+    background-color: rgb(64, 255, 143);
+    color: black;
+    box-shadow: 0 0 4px 4px rgb(83, 255, 187) inset;
+}
+
+p#pTargetUser, span#targetUser
+{
+    margin-top: 26px;
+    margin-bottom: 26px;
+    font-size: 42px;
+}
+
+p#pDate, span#date
+{
+    font-size: 35px;
+}
+
+div.expsElem > p
+{
+    font-size: 28px;
+}
+
+div.interactElem > p
+{
+    font-size: 28px;
+}
+
+
+img#bgImg
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    -webkit-animation: backgroundP1 4s linear infinite;
+}
+
+div#userDiv
+{
+    text-shadow: 0 0 6px rgb(0, 0, 0);
+    opacity: 0.7;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 20px rgb(240, 240, 120),
+                0 0 20px 5px rgb(120, 120, 60),
+                0 0 20px 20px rgb(231, 231, 216) inset;
+    background-color: rgb(245, 245, 231);
+    -webkit-animation: 4s  myGradient linear infinite;
+}
+
+p#pDate
+{
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    opacity: 0.7;
+    padding: 20px 32px 20px 32px;
+    border-radius: 16px;
+    box-shadow: 0 0 18px 18px rgb(160, 160, 240),
+                0 0 18px 5px rgb(80, 80, 120),
+                0 0 18px 18px rgb(231, 216, 231) inset;
+    background-color: rgb(233, 226, 231);
+    -webkit-animation: 4s  myGradientang90 linear infinite;
+}
+
+div#articleDiv
+{
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+    opacity: 0.7;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 16px 16px rgb(120, 200, 240),
+                0 0 16px 5px rgb(60, 100, 120),
+                0 0 16px 16px rgb(233, 220, 220) inset;
+    background-color: rgb(238, 233,231);
+    -webkit-animation: 4s  myGradientang180 linear infinite;
+}
+
+div#commentDiv
+{
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+    opacity: 0.7;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 16px 16px rgb(200, 120, 240),
+                0 0 16px 5px rgb(100, 60, 120),
+                0 0 16px 16px rgb(211, 198, 208) inset;
+    background-color: rgb(232, 226, 230);
+    -webkit-animation: 4s  myGradientang270 linear infinite;
+}
+
+div#supportDiv
+{
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+    opacity: 0.7;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 16px 16px rgb(240, 120, 120),
+                0 0 16px 5px rgb(120, 60, 60),
+                0 0 16px 16px rgb(220, 190, 197) inset;
+    background-color: rgb(235, 222, 222);
+    -webkit-animation: 4s  myGradient linear infinite;
+}
+
+div#focusDiv
+{
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+    opacity: 0.7;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 16px 16px rgb(240, 60, 200),
+                0 0 16px 5px rgb(120, 30, 100),
+                0 0 16px 16px rgb(220, 186, 201) inset;
+    background-color: rgb(235, 211, 233);
+    -webkit-animation: 4s  myGradientang90 linear infinite;
+}
+
+div#beFocusDiv
+{
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+    opacity: 0.7;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 16px 16px rgb(40, 220, 160),
+                0 0 16px 5px rgb(20, 110, 80),
+                0 0 16px 16px rgb(186, 220, 201) inset;
+    background-color: rgb(211, 235, 233);
+    -webkit-animation: 4s  myGradientang180 linear infinite;
+
+}
+
+div#container
+{
+    transition: 0.8s;
+    padding: 70px;
+    background-color: rgba(230, 235, 240, 0.7);
+    border-radius: 40px;
+    box-shadow: 0 0 40px 40px rgba(220, 223, 226, 0.7),
+                0 0 40px 10px rgba(110, 112, 113, 0.7),
+                0 0 40px 40px rgba(224, 226, 227, 0.7) inset;
+    -webkit-animation: 4s MainP1 linear infinite;
+}
+
+div.expsElem > p
+{
+    margin-bottom:  15px;
+    margin-top: 15px;
+}
+
+div.interactElem > p
+{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+@keyframes backgroundP1{
+    0% {
+        filter: blur(7px) brightness(80%);
+    }
+    50% {
+        filter: blur(0px) brightness(120%);
+    }
+    100% {
+        filter: blur(7px) brightness(80%);
+    }
+}
+
+@keyframes MainP1{
+    0% {
+        background-color: rgba(230, 235, 240, 0.3);
+        box-shadow: 0 0 20px 20px rgba(220, 223, 226, 0.3),
+                    0 0 20px 5px rgba(110, 112, 113, 0.3),
+                    0 0 20px 20px rgba(224, 226, 227, 0.3) inset;
+    }
+    50% {
+        background-color: rgba(230, 235, 240, 0.7);
+        box-shadow: 0 0 40px 40px rgba(220, 223, 226, 0.7),
+                    0 0 40px 10px rgba(110, 112, 113, 0.7),
+                    0 0 40px 40px rgba(224, 226, 227, 0.7) inset;
+
+    }
+    100% {
+        background-color: rgba(230, 235, 240, 0.3);
+        box-shadow: 0 0 20px 20px rgba(220, 223, 226, 0.3),
+                    0 0 20px 5px rgba(110, 112, 113, 0.3),
+                    0 0 20px 20px rgba(224, 226, 227, 0.3) inset;
+    }
+}
+
+@keyframes myGradient {
+    0% {
+        filter: contrast(140%)
+    }
+    50% {
+        filter: contrast(60%)
+    }
+    100% {
+        filter: contrast(140%)
+    }
+}
+
+@keyframes myGradientang90 {
+    0% {
+        filter: contrast(100%)
+    }
+    25% {
+        filter: contrast(60%)
+    }
+    50% {
+        filter: contrast(100%)
+    }
+    75% {
+        filter: contrast(140%)
+    }
+    100% {
+        filter: contrast(100%)
+    }
+}
+
+@keyframes myGradientang180 {
+    0% {
+        filter: contrast(60%)
+    }
+    25% {
+        filter: contrast(100%)
+    }
+    50% {
+        filter: contrast(140%)
+    }
+    75% {
+        filter: contrast(100%)
+    }
+    100% {
+        filter: contrast(60%)
+    }
+}
+
+@keyframes myGradientang270 {
+    0% {
+        filter: contrast(100%)
+    }
+    25% {
+        filter: contrast(140%)
+    }
+    50% {
+        filter: contrast(100%)
+    }
+    75% {
+        filter: contrast(60%)
+    }
+    100% {
+        filter: contrast(100%)
+    }
+}
+

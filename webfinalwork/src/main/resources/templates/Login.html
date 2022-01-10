@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <!--css 样式-->
+        <link rel="stylesheet" href="../static/Login/Login.css"/>
+        <!--jquery库-->
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+        <!--操作cookie 必须要这个库-->
+        <script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+        <!--防止初始加载外部css样式时transform生效的脚本-->
+        <script src="../static/Common/initTransformPrevention.js"></script>
+        <!--时钟脚本-->
+        <script src="../static/Common/Clock.js"></script>
+        <!--动态样式脚本-->
+        <script src="../static/Login/JavaScript/LoginDisplay.js" defer></script>
+        <!--功能和服务脚本-->
+        <script src="../static/Login/JavaScript/LoginService.js" defer></script>
+    </head>
+    <body class="no_transition">
+        <!--本页面所有元素均为绝对定位-->
+        <p id="clock">时间信息</p>
+        <img id="background" src="../static/Login/Loginbackground.png"/>
+        <button class="b1p" id="login">注册</button>
+        <button class="b2p" id="register">帮助</button>
+        <button class="b3p" id="findPassword">忘记</br>密码</button>
+        <p id="yearLicense">
+            <a href="/help" target="_blank">帮助中心</a>
+            <span> | </span>
+            <a href="/aboutUs" target="_blank">关于我们</a>
+            <span> | 2020@guapi</span>
+        </p>
+        <form method="post" id="form1" th:object="${loginInfo}">
+            <h2>登录</h2>
+            <p id="inputContainer1">用户名
+                <input id="name" th:field="*{userName}" type="text" pattern="[_a-zA-Z0-9\u4e00-\u9fa5]{6,}"
+                       maxlength="14" autocomplete="off" placeholder="6-14位下划线英文中文数字" required/>
+            </p>
+            <p id="r1">请输入用户名</p>
+            <p id="inputContainer2">密码
+                <input id="password" th:field="*{passWord}" type="password" pattern=".{6,}"
+                       maxlength="14" placeholder="6-14位任意字符" required/>
+            </p>
+            <p id="r2">请输入密码</p>
+            <input id="submitInput" type="button" value="提交" disabled/>
+            <p id="r3">请按照格式填写</p>
+        </form>
+    </body>
+</html>

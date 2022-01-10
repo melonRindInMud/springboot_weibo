@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register</title>
+        <!--外部CSS-->
+        <link rel="stylesheet" href="../static/Register/Register.css">
+
+        <!--jquery库-->
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+        <!--操作cookie 必须要这个库-->
+        <script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <!--防止初始transition 生效-->
+        <script src="../static/Common/initTransformPrevention.js"></script>
+        <!--时钟模块脚本-->
+        <script src="../static/Common/Clock.js"></script>
+        <!--引入外部脚本，以为jquery 中的元素选择器，所以jquery 脚本一定要设置defer 属性-->
+        <script src="../static/Register/Register.js" defer></script>
+    </head>
+    <body class="no_transition">
+        <!--绝对定位-->
+        <p id="statement1">用内卷</p>
+        <p id="statement2">让简单的世界更复杂</p>
+        <p id="yearLicense">
+            <a href="/help" target="_blank">帮助中心</a>
+            <span> | </span>
+            <a href="/aboutUs" target="_blank">关于我们</a>
+            <span> | 2020@guapi</span>
+        </p>
+        <p id="clock">时间</p>
+        <img src="../static/Register/registerbackground.jpg" id="backgroundImg"/>
+        <!--点击登录以后不一定跳转，所以form 只作为封装数据使用，具体提交通过按钮动作函数实现-->
+        <form id="registerForm" th:object="${info}">
+            <h2>欢迎注册</h2>
+            <p id="jumpLog">已有账号?<a href="/login" target="_blank">登录</a></p>
+            <div id="d1">
+                用户名
+                <input type="text" id="userName" th:field="*{userName}" pattern="[0-9_a-zA-Z\u4e00-\u9fa5]{6,14}"
+                         autocomplete="off" maxlength="14" placeholder="6-14个数字_和中英文" required/>
+            </div>
+            <p id="r1">请填写此栏</p>
+            <div id="d2">
+                密码
+                <input type="password" id="passWord" th:field="*{passWord}" pattern=".{6,14}" maxlength="14"
+                        placeholder="6-14个任意字符" required/>
+            </div>
+            <p id="r2">请填写此栏</p>
+            <div id="d3">
+                确认密码
+                <input type="password" id = "passWordConfirm"placeholder="请再次输入密码" maxlength="14" required/>
+            </div>
+            <p id="r3">请填写此栏</p>
+            <div id="d4">
+                注册邮箱
+                <input type="text" id="email" th:field="*{logEmail}" pattern=".+@.+" placeholder="用于找回密码最大长28位"
+                       maxlength="28" autocomplete="off" required/>
+            </div>
+            <p id="r4">请填写此栏</p>
+            <input type="button" value="提交" id="submit">
+            <p><input type="checkbox" id="agreeTreaty" />阅读并接受<a href="/treaty1" target="_blank">《瓜皮用户协议》</a>及
+                <a href="/treaty2" target="_blank">《瓜皮隐私权保护声明》</a></p>
+        </form>
+    </body>
+</html>

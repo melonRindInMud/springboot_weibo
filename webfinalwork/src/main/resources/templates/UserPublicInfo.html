@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Css-->
+        <link rel="stylesheet" href="../static/UserPublicInfo/UserPublicInfo.css">
+        <!--jquery库-->
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+        <!--js脚本-->
+        <script src="../static/UserPublicInfo/UserPublicInfo.js" defer></script>
+        <meta charset="UTF-8">
+        <title>用户公开信息</title>
+    </head>
+    <body>
+        <img src="../static/UserPublicInfo/bg.jpg" id="bgImg"/>
+        <button id="back">返回主界面</button>
+        <div id="container">
+            <div id="basic">
+                <div class="basicElem" id="userDiv">
+                    <p id="pTargetUser">用户名: <span th:text="${info.getUserName()}" id="targetUser">默认内容</span></p>
+                    <button th:hidden="'ok' != ${flag}" id="focusButton">关注用户</button>
+                    <button th:hidden="'no' != ${flag}" id="unFocusButton">取消关注</button>
+                    <button th:hidden="'unLogin' != ${flag}" id="loginButton">请先登录</button>
+
+                </div>
+                <p id="pDate">注册日期: <span th:text="${info.getRegisterDate()}" id="date">默认内容</span></p>
+            </div>
+            <div id="exps">
+                <div class="expsElem" id="articleDiv">
+                    <p>文章数:</p>
+                    <p th:text="${info.getArticles()}">默认内容</p>
+                </div>
+                <div class="expsElem" id="commentDiv">
+                    <p>评论数:</p>
+                    <p th:text="${info.getComments()}">默认内容</p>
+                </div>
+            </div>
+            <div id="interact">
+                <div class="interactElem" id="supportDiv">
+                    <p>获赞数:</p>
+                    <p th:text="${info.getBePraised()}">默认内容</p>
+                </div>
+                <div class="interactElem" id="focusDiv">
+                    <p>关注数:</p>
+                    <p th:text="${info.getFocus()}">默认内容</p>
+                </div>
+                <div class="interactElem" id="beFocusDiv">
+                    <p>被关注:</p>
+                    <p th:text="${info.getBeFocus()}" id="numberBeFocus">默认内容</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Css-->
+        <link rel="stylesheet" href="/static/Article/Article.css">
+        <!--jquery库-->
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+        <!--防止初始加载外部css样式时transform生效的脚本 需要配合class no_transition(自定义) 使用-->
+        <script src="../static/Common/initTransformPrevention.js"></script>
+        <!--js脚本-->
+        <script src="../static/Article/Article.js" defer></script>
+        <meta charset="UTF-8">
+        <title>文章</title>
+    </head>
+    <body>
+        <a href="/main">返回主页</a>
+        <div id="contentDiv">
+            <h2 th:text="'标题: ' + ${article.getTitle()}"></h2>
+            <h4>作者:
+                <a th:text="${article.getOwnerName()}" th:href="'/userPublicInfo/' + ${article.getOwnerName()}"></a>
+            </h4>
+            <h4 th:text="'发布时间: ' + ${article.getDate()}"></h4>
+            <p>文章内容:</p><p th:utext="${article.getContent()}" id="content"></p> <!--使用th:utext 可以直接忽略转义-->
+            <img th:src="@{${article.getImgUrl()}}"/>
+        </div>
+        <div id="commentInfoDiv">
+            <p>获赞数<span id="supportNumber" th:text="${article.getSupports()}"></span>
+                <span>
+                    <button th:text="${support} == 'noLog' ? '请先登录' : (${support} == 'no' ? '已点过赞' : '点击点赞')"
+                    th:disabled="${support} != 'ok'" id="supportButton">
+                    </button>
+                </span>
+            </p>
+            <p>评论数<span id="commentNumber" th:text="${article.getComments()}"></span></p>
+        </div>
+        <div id="commentDiv">
+            <p>发表评论 评论不少于15字</p>
+            <p id="commentArticleId">被评论文章id<span id="ArticleId"  th:text="${article.id}"></span></p>
+            <p id="commentUserName">评论用户
+                <span id="UserName" th:text="${session.login}"></span>
+                <a th:unless="${session.login}" th:href="'/login'">请先登录</a>
+            </p>
+            <textarea th:disabled="!${session.login}" name="Comment" id="Comment" wrap="hard" cols="20" rows="4" >
+            </textarea>
+            <button id="submitComment" th:text="${session.login} ? '评论' : '请先登录'"
+                    th:disabled="!${session.login}"></button>
+        </div>
+        <div id="commentContent">
+            <p>文章评论</p>
+            <div th:each="m:${comments}">
+                <p>评论时间 <span th:text="${m.getDate()}"></span></p>
+                <p>评论用户 <span th:text="${m.getOwnerName()}"></span></p>
+                <p>评论内容 <span th:text="${m.getInfo()}"></span></p>
+            </div>
+        </div>
+    </body>
+</html>

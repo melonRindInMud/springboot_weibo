@@ -1,0 +1,407 @@
+.no_transition {
+    transition: none;
+}
+
+body {
+    -webkit-animation: bodyEntrance 2s;
+}
+
+nav {
+    height: 5vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    box-shadow: 0px 0px 4px 4px rgba(40, 40, 80, 0.8);
+    -webkit-animation: myGradient 8s linear infinite;
+    filter: contrast(140%)
+}
+
+nav.dawn {
+    background-image: url("headerdawn.png");
+}
+
+nav > button {
+    transition: 0.8s;
+    outline: none;
+    border-radius: 8px;
+    padding: 4px 15px 4px 15px;
+    margin: 4px 20px 4px 20px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+nav > button:enabled:hover {
+    transition: 0.8s;
+    color: rgb(243, 243, 231) !important;
+    background-color: rgba(22, 14, 0, 0.7) !important;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+nav > button:enabled:active {
+    transition: 0.4s;
+    transform: scale(1.0);
+}
+
+
+nav > span {
+
+}
+
+nav > span > input {
+    transition: 0.8s;
+    border-radius: 8px;
+    padding: 4px 12px 4px 12px;
+    font-size: 22px;
+    font-weight: 500;
+    outline: none;
+    margin: 4px 45px 4px 45px;
+    background-color: rgba(238, 241, 245, 0.3);
+    color: rgb(12, 12, 24);
+    width: 400px;
+    box-shadow: 0px 0px 5px 15px rgba(115, 117, 123, 0.8) inset;
+}
+
+nav > span > input:focus {
+    transition: 0.8s;
+    background-color: rgba(238, 241, 245, 0.9);
+    box-shadow: none;
+}
+
+
+nav > span > input:focus-within {
+    transition: 0.8s;
+}
+
+nav > span > input::-webkit-input-placeholder {
+    color: rgb(12, 12, 24);
+    text-align: center;
+}
+
+
+nav.dawn > button.headerLeftButton:enabled {
+    background-color: rgba(233, 241, 255, 0.3);
+    color: rgb(12, 12, 24);
+}
+
+nav.dawn > button.headerRightButton:enabled {
+    background-color: rgba(245, 241, 235, 0.5);
+    color: rgb(12, 12, 24);
+}
+
+nav.dawn > button:disabled {
+    background-color: rgba(245, 241, 235, 0.1);
+    color: rgb(214, 221, 120);
+}
+
+
+#login:enabled, #myArticle:enabled, #compose:enabled{
+    -webkit-animation: myGradient 4s linear infinite;
+}
+
+#logOut:enabled, #supports:enabled {
+    -webkit-animation: myGradientang90 4s linear infinite;
+}
+
+#register:enabled, #comments:enabled {
+    -webkit-animation: myGradientang180 4s linear infinite;
+}
+
+#help:enabled, #referMe:enabled {
+    -webkit-animation: myGradientang270 4s linear infinite;
+}
+
+
+@keyframes myGradient {
+    0% {
+        filter: brightness(140%)
+    }
+    50% {
+        filter: brightness(60%)
+    }
+    100% {
+        filter: brightness(140%)
+    }
+}
+
+@keyframes myGradientang90 {
+    0% {
+        filter: brightness(100%)
+    }
+    25% {
+        filter: brightness(60%)
+    }
+    50% {
+        filter: brightness(100%)
+    }
+    75% {
+        filter: brightness(140%)
+    }
+    100% {
+        filter: brightness(100%)
+    }
+}
+
+@keyframes myGradientang180 {
+    0% {
+        filter: brightness(60%)
+    }
+    25% {
+        filter: brightness(100%)
+    }
+    50% {
+        filter: brightness(140%)
+    }
+    75% {
+        filter: brightness(100%)
+    }
+    100% {
+        filter: brightness(60%)
+    }
+}
+
+@keyframes myGradientang270 {
+    0% {
+        filter: brightness(100%)
+    }
+    25% {
+        filter: brightness(140%)
+    }
+    50% {
+        filter: brightness(100%)
+    }
+    75% {
+        filter: brightness(60%)
+    }
+    100% {
+        filter: brightness(100%)
+    }
+}
+
+@keyframes bodyEntrance {
+    0% {
+        transform: translateX(-400px) rotateY(75deg)
+    }
+    100% {
+        transform: translateX(0px) rotateY(0deg)
+    }
+}
+
+@keyframes userInfo{
+    0% {
+        color: rgb(240, 240, 120);
+        text-shadow: 0 0 16px rgb(200, 200, 100);
+
+    }
+    25% {
+        color: rgb(255, 255, 170);
+        text-shadow: 0 0 24px rgb(240, 240, 150);
+    }
+    50% {
+        color: rgb(240, 240, 120);
+        text-shadow: 0 0 16px rgb(200, 200, 100);
+    }
+    75% {
+        color: rgb(185, 185, 50);
+        text-shadow: 0 0 8px rgb(140, 140, 60);
+    }
+    100% {
+        color: rgb(240, 240, 120);
+        text-shadow: 0 0 16px rgb(200, 200, 100);
+    }
+}
+
+p#userInfo
+{
+    font-size: 25px;
+    color: rgb(240, 240, 120);
+    text-shadow: 0 0 7px rgb(200, 200, 100);
+    margin-right: 20px;
+    margin-top: 23px;
+    -webkit-animation: userInfo 6s linear infinite;
+}
+
+button.hide
+{
+    visibility: hidden;
+}
+
+button.show
+{
+    visibility: visible;
+}
+
+button#allArticle
+{
+    font-size: 50px;
+    color: rgb(35, 10, 7);
+    box-shadow: 0 0 4px 4px rgb(30, 8, 5);
+    border-radius: 15px;
+    position: absolute;
+    left: 10px;
+    top: 70px;
+    outline: none;
+    background-image: url("allArticle.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button#loginButton
+{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 4px 4px rgb(20, 120, 255),
+                0 0 25px 25px rgb(20, 70, 200) inset;
+    border-radius: 15px;
+    position: absolute;
+    left: 10px;
+    top: 380px;
+    outline: none;
+    background-image: url("login.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button#logoutButton
+{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 4px 4px rgb(200, 200, 200),
+                0 0 25px 25px rgb(100, 100, 100) inset;
+    border-radius: 15px;
+    position: absolute;
+    left: 10px;
+    top: 690px;
+    outline: none;
+    background-image: url("logOut.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button#registerButton
+{
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 4px 4px rgb(240, 240, 240),
+                0 0 25px 25px rgb(220, 220, 220) inset;
+    border-radius: 15px;
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    outline: none;
+    background-image: url("register.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button#findPasswordButton
+{
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 4px 4px rgb(120, 120, 240),
+                0 0 25px 25px rgb(90, 90, 200) inset;
+    border-radius: 15px;
+    position: absolute;
+    right: 10px;
+    top: 380px;
+    outline: none;
+    background-image: url("find.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button#helpButton
+{
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 4px 4px rgb(240, 240, 240),
+                0 0 25px 25px rgb(220, 220, 220) inset;
+    border-radius: 15px;
+    position: absolute;
+    right: 10px;
+    top: 690px;
+    outline: none;
+    background-image: url("hep.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+div#functions > button
+{
+    transition: 0.8s;
+    padding: 115px 68px 115px 68px;
+
+}
+
+div#functions > button:disabled
+{
+    opacity: 0.2;
+}
+
+div#functions > button:enabled:hover
+{
+    transition: 0.8s;
+    filter: brightness(150%) contrast(80%);
+}
+
+div#theme
+{
+    background-color: rgb(220, 220, 220);
+    box-shadow: 0 0 4px 4px rgb(210, 210, 210),
+                0 0 25px 25px rgb(200, 200, 200) inset;
+    border-radius: 30px;
+    position: absolute;
+    top: 80px;
+    left: 363px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1200px;
+    height: 900px;
+
+}
+
+div#theme > p#title
+{
+    font-size: 100px;
+    text-shadow: 0 0 20px rgb(0, 0, 0);
+    margin-bottom: 70px;
+    margin-top: 50px;
+}
+
+p#clock
+{
+    margin-top: 70px;
+    font-size: 30px;
+    text-shadow: 0 0 10px rgb(40, 40, 40);
+    white-space: pre;
+}
+
+p#yearLicense
+{
+    font-size: 18px;
+    position: absolute;
+    left: 385px;
+    bottom: 50px;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 20px;
+    -webkit-animation: 4s licenseP1 linear infinite;
+}
+
+p#yearLicense > a
+{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+p#yearLicense > a:hover
+{
+    text-decoration: underline;
+}

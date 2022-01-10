@@ -1,0 +1,4 @@
+p#content
+{
+    white-space: pre;     /* 不忽略空白字符 */
+}

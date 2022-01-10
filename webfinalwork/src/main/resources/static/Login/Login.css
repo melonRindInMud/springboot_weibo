@@ -1,0 +1,384 @@
+@keyframes buttonPresence1 {
+    0% {opacity: 60%;}
+    50% {opacity: 100%;}
+    100% {opacity: 60%;}
+}
+
+@keyframes buttonPresence2 {
+    0% {opacity: 86.67%}
+    16.67% {opacity: 100%}
+    66.67% {opacity: 60%}
+    100% {opacity: 86.67%}
+}
+
+@keyframes buttonPresence3 {
+    0% {opacity: 86.67%}
+    33.34% {opacity: 60%}
+    83.34% {opacity: 100%}
+    100% {opacity: 86.67%}
+}
+
+@keyframes imgPresence {
+    0% {filter: contrast(80%)}
+    50% {filter: contrast(100%)}
+    100% {filter: contrast(80%);}
+}
+
+@keyframes fontColorChange{
+    0% {color: rgb(150, 150, 75)}
+    33.34% {color: rgb(75, 150, 150)}
+    66.67% {color: rgb(150, 75, 150)}
+    100% {color: rgb(150, 150, 75)}
+}
+
+@Keyframes boxShadowChange {
+    0% {box-shadow: 0px 0px 8px 3px rgb(131, 131, 65) inset,
+    0px 0px 10px 1px rgb(181, 181, 90),
+    0px 0px 15px 2px rgb(141, 141, 70);}
+    33.34% {box-shadow: 0px 0px 8px 3px rgb(65, 131, 131) inset,
+    0px 0px 10px 1px rgb(90, 181, 181),
+    0px 0px 15px 2px rgb(70, 141, 141);}
+    66.67% {box-shadow: 0px 0px 8px 3px rgb(131, 65, 131) inset,
+    0px 0px 10px 1px rgb(181, 90, 181),
+    0px 0px 15px 2px rgb(141, 70, 141);}
+    100% {box-shadow: 0px 0px 8px 3px rgb(131, 131, 65) inset,
+    0px 0px 10px 1px rgb(181, 181, 90),
+    0px 0px 15px 2px rgb(141, 141, 70);}
+}
+
+@keyframes bodyEntrance {
+    0% {opacity: 0%; }
+    100% {opacity: 100%; }
+}
+
+.no_transition {
+    transition: none;
+}
+
+.on
+{
+    transition: 1.0s;
+    opacity: 1.0 !important;
+}
+
+body
+{
+    -webkit-animation: bodyEntrance 2s;
+    animation: bodyEntrance 2s;
+}
+
+body > button
+{
+    transition: 0.8s;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+}
+
+body > button:hover
+{
+    transition: 0.8s;
+    background-color: black !important;
+    color: white;
+    transform: scale(1.2);
+}
+
+body > button:active
+{
+    transition: 0.4s;
+    transform: scale(0.8);
+    color: yellow;
+}
+
+#login
+{
+    position: absolute;
+    left: 371px;
+    top: 151px;
+    width: 140px;
+    height: 140px;
+    background-color: rgb(234, 255, 120);
+    box-shadow: 0px 0px 22px 8px  rgb(81, 81, 24) inset,
+                0px 0px 15px 1px rgb(137, 132, 59),
+                0px 0px 22px 2px rgb(121, 101, 45);
+    font-size: 32px;
+    font-weight: 500;
+}
+
+#findPassword
+{
+    position: absolute;
+    left: 590px;
+    top: 406px;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(234, 101, 231);
+    box-shadow: 0px 0px 22px 16px rgb(81, 32, 76) inset,
+                0px 0px 15px 2px rgb(133, 57, 123),
+                0px 0px 22px 4px rgb(121, 45, 115);
+    font-size: 42px;
+    font-weight: 500;
+}
+
+#register
+{
+    position: absolute;
+    left: 241px;
+    top: 621px;
+    width: 220px;
+    height: 220px;
+    background-color: rgb(101, 234, 234);
+    box-shadow: 0px 0px 22px 17px rgb(32, 76, 81) inset,
+    0px 0px 15px 2px rgb(57, 123, 133),
+    0px 0px 22px 4px rgb(45,115, 121);
+    font-size: 56px;
+    font-weight: 500;
+
+}
+
+.b1p
+{
+    -webkit-animation: buttonPresence1 2s linear infinite;
+    animation: buttonPresence1 2s linear infinite;
+}
+
+.b2p
+{
+    -webkit-animation: buttonPresence2 2s linear infinite;
+    animation: buttonPresence2 2s linear infinite;
+}
+
+.b3p
+{
+    -webkit-animation: buttonPresence3 2s linear infinite;
+    animation: buttonPresence3 2s linear infinite;
+}
+
+img#background
+{
+    width: 99vw;
+    height: 97.8vh;
+    z-index: -3;
+    -webkit-animation: imgPresence 3s linear infinite;
+    animation: imgPresence 3s linear infinite;
+}
+
+
+form
+{
+    display: flex;
+    transition: 0.8s;
+    position: absolute;
+    top: 250px;
+    left: 1032px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(231, 212, 213, 0.4);
+    box-shadow: 0px 0px 41px 34px rgba(67, 67, 67, 0.4) inset,
+                0px 0px 23px 3px  rgba(154, 154, 154, 0.4),
+                0px 0px 34px 6px  rgba(127, 127, 127, 0.4);
+
+    padding: 55px 50px 5px 50px;
+    border-radius: 30px;
+
+}
+
+form.cHover
+{
+    transition: 0.8s;
+    background-color: rgba(252, 252, 252, 0.9);
+    box-shadow: 0px 0px 41px 34px rgba(131, 131, 131, 0.9) inset,
+                0px 0px 23px 5px rgba(181, 181, 181, 0.9),
+                0px 0px 34px 10px rgba(141, 141, 141, 0.9);
+
+}
+
+p > input
+{
+    opacity: 0.2;
+    transition: 0.8s;
+    padding: 6px 10px 6px 10px;
+    border-radius: 0 7px 7px 0px;
+    outline: none;
+    border: none;
+    font-size: 32px;
+    margin: 0px 0px 0px 10px;
+    width: 270px;
+    box-shadow: 0px 0px 8px 5px rgb(214, 214, 214) inset;
+    background-color: rgb(250, 250, 250);
+}
+
+p > input::placeholder
+{
+    font-size: 21px;
+}
+
+p > input.cHover
+{
+    opacity: 1.0;
+}
+
+p > input:focus
+{
+    opacity: 1.0;
+    -webkit-animation: fontColorChange 2s linear infinite;
+    animation: fontColorChange 2s linear infinite;
+}
+
+p > input:focus:invalid
+{
+    box-shadow: 0px 0px 8px 5px rgb(221, 221, 101) inset !important;
+}
+
+p > input:focus:valid
+{
+    box-shadow: 0px 0px 8px 5px rgb(101, 221, 231) inset !important;
+}
+
+
+p
+{
+    transition: 1.0s;
+    margin: 6px 10px 6px 10px;
+    font-size: 28px;
+    opacity: 0.2;
+}
+
+p.cFocus
+{
+    opacity: 1.0;
+    -webkit-animation: boxShadowChange 2s linear infinite;
+    animation: boxShadowChange 2s linear infinite;
+}
+
+#inputContainer1, #inputContainer2, #inputContainer3
+{
+    padding: 2px 2px 2px 10px;
+    border-radius: 8px;
+    transition: 0.8s;
+    background-color: rgb(252, 252, 252);
+    box-shadow: 0px 0px 8px 3px rgb(131, 131, 131) inset,
+    0px 0px 10px 1px rgb(181, 181, 181),
+    0px 0px 15px 2px rgb(141, 141, 141);
+}
+
+#inputContainer2 > input
+{
+    margin-left: 35px;
+}
+
+
+#submitInput
+{
+    transition: 0.8s;
+    opacity: 0.2;
+    border: none;
+    outline: none;
+    font-size: 32px;
+    margin: 15px 4px 15px 4px;
+    padding: 10px 100px 10px 100px;
+    border-radius: 10px;
+
+    box-shadow: 0px 0px 8px 3px rgb(131, 131, 131) inset,
+    0px 0px 10px 1px rgb(181, 181, 181),
+    0px 0px 15px 2px rgb(141, 141, 141);
+}
+
+
+#submitInput:disabled
+{
+    transition: 0.8s;
+    opacity: 20%;
+    box-shadow: none;
+}
+
+#submitInput.on:enabled
+{
+    transition: 0.8s;
+    opacity: 1.0;
+    box-shadow: 0px 0px 8px 3px rgb(131, 131, 131) inset,
+    0px 0px 10px 1px rgb(181, 181, 181),
+    0px 0px 15px 2px rgb(141, 141, 141);
+}
+
+#submitInput.on:enabled:hover
+{
+    transform: scale(1.2);
+    filter: invert(1.0);
+}
+
+#submitInput.on:enabled:active
+{
+    transform: scale(0.8);
+}
+
+
+h2
+{
+    transition: 1.0s;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0.2;
+}
+
+/*错误信息文本*/
+p.error
+{
+    transition: 0.8s;          /*设置样式渐变，需要0.8秒完成变化*/
+    color: rgb(240, 100, 100);  /*设置内容颜色，对于p来说 内容就是文本*/
+    opacity: 1.0;
+}
+
+/*警告信息文本*/
+p.warning
+{
+    transition: 0.8s;
+    color: rgb(240, 160, 100);
+    opacity: 1.0;
+}
+
+/*正确信息文本*/
+p.correct
+{
+    transition: 0.8s;
+    color: rgb(40, 100, 240);
+    opacity: 1.0;
+}
+
+#yearLicense
+{
+    font-size: 18px;
+    position: absolute;
+    left: 100px !important;
+    bottom: 100px !important;
+    opacity: 1.0;
+    color: white;
+}
+
+#yearLicense > a
+{
+    color: rgb(250, 240, 250);
+}
+
+a
+{
+    transition: 0.8s;
+    text-decoration: none;
+}
+
+a:hover
+{
+    transition: 0.8s;
+    text-decoration: underline;
+}
+
+/*时钟样式*/
+p#clock
+{
+    position: absolute;
+    left: 300px;
+    top: 300px;
+    
+}
